@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends of the Manatee - User Signup</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Friends of the Manatee</h1>
+    <p>Join our community in protecting and celebrating the gentle manatee.</p>
+  </header>
+
+  <section class="users-list">
+    <h2>Our Supporters</h2>
+    <p>Meet the amazing individuals who have joined us in our mission.</p>
+    <ul>
+      <% users.forEach(user => { %>
+        <li>
+          <%= user.name %> - <%= user.email %>
+          <a href="/edit/<%= user._id %>">Edit</a>
+        </li>
+      <% }); %>
+    </ul>
+  </section>
+
+  <section class="signup-form">
+    <h2>Become a Friend of the Manatee</h2>
+    <p>Sign up today to help us protect these majestic creatures.</p>
+    <form action="/signup" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Thank you for supporting the manatee! Together, we can make a difference.</p>
+  </footer>
+</body>
+</html>

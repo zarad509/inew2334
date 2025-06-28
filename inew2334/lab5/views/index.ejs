@@ -1,0 +1,26 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poetry Quotes</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Poetry Quotes</h1>
+        <div class="quotes">
+            <% quotes.forEach(quote => { %>
+                <div class="quote">
+                    <blockquote>
+                        <p><%= quote.quote %></p>
+                    </blockquote>
+                    <p class="author">- <%= quote.author %></p>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
